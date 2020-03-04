@@ -4,7 +4,7 @@ import { live2dJSString } from './live2d.js';
 @Component({
   selector: 'lib-ng-live2d',
   templateUrl: './ng-live2d.component.html',
-  styles: ['./ng-live2d.component.css']
+  styleUrls: ['./ng-live2d.component.css']
 })
 export class NgLive2dComponent implements OnInit {
 
