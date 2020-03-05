@@ -12,7 +12,7 @@
   },
   "author": "stack-stark",
   "license": "MIT",
-  "keywords": ["ng","live2d","angular", "angular library"],
+  "keywords": ["live2d","angular", "angular library"],
   "bugs": {
     "url": "https://github.com/stack-stark/ng-live2d/issues"
   },

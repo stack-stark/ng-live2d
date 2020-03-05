@@ -1,5 +1,5 @@
 # about
-angular下的live2d库,借鉴https://github.com/QiShaoXuan/vuepress-plugin-cat.git
+angular下的live2d库,借鉴于https://github.com/QiShaoXuan/vuepress-plugin-cat.git
 
 # Install
 
@@ -22,11 +22,11 @@ impor { NgLive2dModule } from 'ng-live2d';
 ``` html
 <lib-ng-live2d [modelName]="" [needToTop]=""></lib-ng-live2d>
 ```
-# API
+# Params
 ### modelName string
 模型名,包含以下名字,可不传,默认hijiki
-z16,Epsilon2_1,izumi,koharu,shizuku,miku,
-hijiki,tororo
+
+`z16`,`Epsilon2_1`,`izumi`,`koharu`,`shizuku`,`miku`,`hijiki`,`tororo`
 
 ### needToTop boolean
 是否需要点击回到顶部功能,默认false
@@ -37,8 +37,3 @@ http://live2d.asnyc.cn
 
 # License
 MIT
-
-# Keywords
-live2d 
-angular
-library
