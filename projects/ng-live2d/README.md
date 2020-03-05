@@ -33,7 +33,7 @@ hijiki,tororo
 
 
 # Demo
-
+http://live2d.asnyc.cn
 
 # License
 MIT
