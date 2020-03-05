@@ -18,6 +18,7 @@ export class NgLive2dComponent implements OnInit {
   @Input() needToTop = false;
 
   public isLoaded = true;
+  public loading = false;
 
   private model = {
     z16: 'https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-z16/assets/z16.model.json',
@@ -36,6 +37,7 @@ export class NgLive2dComponent implements OnInit {
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnChanges() {
+    this.loading = true;
     this.style = {
       width: (150 / 1424) * document.body.clientWidth,
       height: ((150 / 1424) * document.body.clientWidth) / 0.8
@@ -48,6 +50,7 @@ export class NgLive2dComponent implements OnInit {
         this.modelName ? this.model[this.modelName] : this.model.hijiki
       );
     }
+    this.loading = false;
   }
 
   /**

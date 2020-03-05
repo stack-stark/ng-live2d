@@ -1,3 +1,6 @@
-<div class="container" ngif="isLoaded" (click)="scrollToTop()">
+<div class="container" *ngIf="isLoaded" (click)="scrollToTop()">
   <canvas id="ng-live2d" width="{{style['width']}}" height="{{style['height']}}" class="live2d"></canvas>
+  <div class="box" *ngIf="loading">
+      <div class="loader"></div>
+  </div>
 </div>

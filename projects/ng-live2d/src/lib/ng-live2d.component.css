@@ -1,7 +1,7 @@
 .container {
     position: fixed;
-    right: 50px;
-    bottom: 100px;
+    right: 0px;
+    bottom: 1px;
     color: #707f80;
     cursor: pointer;
     width: 200px;
@@ -12,7 +12,73 @@
     position: fixed;
     opacity: 0.9;
     right: 0px;
-    bottom: -20px;
+    bottom: 1px;
     z-index: 99999;
     pointer-events: none;
+}
+.box {
+    width: 200px;
+    height: 250px;
+    border-radius: 3px;
+    font-size: 30px;
+    color: #ed6ea0;
+    padding: 1em;
+    margin-bottom: .25em;
+    vertical-align: top;
+    -webkit-transition: .3s color, .3s border;
+    transition: .3s color, .3s border;
+    z-index: 6666;
+}
+.loader {
+    position: relative;
+    background-color: currentcolor;
+    border-radius: 50%;
+}
+.loader:after,
+.loader:before {
+    content: "";
+    position: absolute;
+    width: .25em;
+    height: .25em;
+    border-radius: 50%;
+    opacity: .8;
+}
+.loader:after {
+    left: -.5em;
+    top: -.25em;
+    background-color: currentcolor;
+    -webkit-transform-origin: .75em 1em;
+    transform-origin: .75em 1em;
+    -webkit-animation: loader 1s linear infinite;
+    animation: loader 1s linear infinite;
+    opacity: .6;
+}
+.loader:before {
+    left: -1.25em;
+    top: -.75em;
+    background-color: currentcolor;
+    -webkit-transform-origin: 1.5em 1em;
+    transform-origin: 1.5em 1em;
+    -webkit-animation: loader 2s linear infinite;
+    animation: loader 2s linear infinite;
+}
+@-webkit-keyframes loader {
+    0% {
+        -webkit-transform: rotateZ(0deg) translate3d(0, 0, 0);
+        transform: rotateZ(0deg) translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg) translate3d(0, 0, 0);
+        transform: rotateZ(360deg) translate3d(0, 0, 0);
+    }
+}
+@keyframes loader {
+    0% {
+        -webkit-transform: rotateZ(0deg) translate3d(0, 0, 0);
+        transform: rotateZ(0deg) translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg) translate3d(0, 0, 0);
+        transform: rotateZ(360deg) translate3d(0, 0, 0);
+    }
 }
