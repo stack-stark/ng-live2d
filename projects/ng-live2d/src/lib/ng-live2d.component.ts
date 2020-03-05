@@ -10,7 +10,7 @@ export class NgLive2dComponent implements OnInit {
 
   constructor() { }
 
-  @Input() style: object = {
+  style: object = {
     width: 280,
     height: 250
   };
@@ -32,6 +32,22 @@ export class NgLive2dComponent implements OnInit {
 
   ngOnInit() {
     this.init();
+  }
+
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnChanges() {
+    this.style = {
+      width: (150 / 1424) * document.body.clientWidth,
+      height: ((150 / 1424) * document.body.clientWidth) / 0.8
+    };
+     // tslint:disable-next-line:no-string-literal
+    if (window['loadlive2d']) {
+      // tslint:disable-next-line:no-string-literal
+      window['loadlive2d'](
+        'ng-live2d',
+        this.modelName ? this.model[this.modelName] : this.model.hijiki
+      );
+    }
   }
 
   /**
@@ -74,7 +90,7 @@ export class NgLive2dComponent implements OnInit {
    */
   public scrollToTop() {
     const top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (top > 300 && this.needTOTop) {
+    if (top > 300 && this.needToTop) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
