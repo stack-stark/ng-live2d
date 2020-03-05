@@ -15,7 +15,7 @@ export class NgLive2dComponent implements OnInit {
     height: 250
   };
   @Input() modelName = '';
-  @Input() needTOTop = false;
+  @Input() needToTop = false;
 
   public isLoaded = true;
 

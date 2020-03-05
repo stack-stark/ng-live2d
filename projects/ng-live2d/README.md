@@ -1,24 +1,43 @@
-# NgLive2d
+# about
+angular下的live2d库,借鉴https://github.com/QiShaoXuan/vuepress-plugin-cat.git
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
+# Install
 
-## Code scaffolding
+``` bash
+npm install --save ng-live2d
+yarn add ng-live2d
+```
 
-Run `ng generate component component-name --project ng-live2d` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-live2d`.
-> Note: Don't forget to add `--project ng-live2d` or else it will be added to the default project in your `angular.json` file. 
+# Usage
+``` js
+impor { NgLive2dModule } from 'ng-live2d';
 
-## Build
+@NgModule({
+    "imports": [
+        NgLive2dModule
+    ]
+})
+```
+``` html
+<lib-ng-live2d [modelName]="" [needToTop]=""></lib-ng-live2d>
+```
+# API
+### modelName string
+模型名,包含以下名字,可不传,默认hijiki
+z16,Epsilon2_1,izumi,koharu,shizuku,miku,
+hijiki,tororo
 
-Run `ng build ng-live2d` to build the project. The build artifacts will be stored in the `dist/` directory.
+### needToTop boolean
+是否需要点击回到顶部功能,默认false
 
-## Publishing
 
-After building your library with `ng build ng-live2d`, go to the dist folder `cd dist/ng-live2d` and run `npm publish`.
+# Demo
 
-## Running unit tests
 
-Run `ng test ng-live2d` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# License
+MIT
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Keywords
+live2d 
+angular
+library

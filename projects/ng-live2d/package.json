@@ -11,7 +11,8 @@
     "url": "git+https://github.com/stack-stark/ng-live2d.git"
   },
   "author": "stack-stark",
-  "license": "ISC",
+  "license": "MIT",
+  "keywords": ["ng","live2d","angular", "angular library"],
   "bugs": {
     "url": "https://github.com/stack-stark/ng-live2d/issues"
   },
