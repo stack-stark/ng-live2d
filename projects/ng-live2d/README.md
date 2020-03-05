@@ -5,6 +5,7 @@ angular下的live2d库,借鉴https://github.com/QiShaoXuan/vuepress-plugin-cat.g
 
 ``` bash
 npm install --save ng-live2d
+#or
 yarn add ng-live2d
 ```
 
