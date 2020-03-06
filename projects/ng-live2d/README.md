@@ -36,6 +36,10 @@ impor { NgLive2dModule } from 'ng-live2d';
 ### positionRight boolean
 是否右下角显示,默认true,可不传;false则右下角显示
 
+# Change Log
+0.0.1 初始版本--2020.3.5
+0.0.2 增加支持传入模型地址,支持左下角显示--2020.3.6
+
 # Demo
 http://live2d.asnyc.cn
 
