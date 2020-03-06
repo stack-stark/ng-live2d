@@ -1,7 +1,4 @@
 .container {
-    position: fixed;
-    right: 0px;
-    bottom: 1px;
     color: #707f80;
     cursor: pointer;
     width: 200px;
@@ -9,12 +6,21 @@
 }
 
 .container #ng-live2d {
-    position: fixed;
+   
     opacity: 0.9;
-    right: 0px;
-    bottom: 1px;
     z-index: 99999;
     pointer-events: none;
+}
+.left{
+    position: fixed;
+    left: 0px;
+    bottom: 1px;
+}
+
+.right{
+    position: fixed;
+    right: 0px;
+    bottom: 1px;
 }
 .box {
     width: 200px;
