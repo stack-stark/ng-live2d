@@ -1,9 +1,10 @@
 {
   "name": "ng-live2d",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^8.1.3",
-    "@angular/core": "^8.1.3"
+    "@angular/core": "^8.1.3",
+    "html2canvas": "^1.0.0-rc.5"
   },
   "description": "angular的live2D插件，修改于https://github.com/QiShaoXuan/vuepress-plugin-cat.git 增加了点击回到顶部功能",
   "repository": {
@@ -12,7 +13,11 @@
   },
   "author": "stack-stark",
   "license": "MIT",
-  "keywords": ["live2d","angular", "angular library"],
+  "keywords": [
+    "live2d",
+    "angular",
+    "angular library"
+  ],
   "bugs": {
     "url": "https://github.com/stack-stark/ng-live2d/issues"
   },

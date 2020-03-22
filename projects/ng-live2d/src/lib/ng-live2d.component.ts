@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { live2dJSString } from './live2d.js';
-
+declare global {
+  interface Window { loadlive2d: any; clipboardData: any; }
+}
+// import html2canvas from 'html2canvas';
 @Component({
   selector: 'lib-ng-live2d',
   templateUrl: './ng-live2d.component.html',
@@ -16,7 +19,6 @@ export class NgLive2dComponent implements OnInit {
   };
 
   @Input() modelNameOrUrl = ''; // 模型或者地址
-  @Input() needToTop = false; // 是否需要点击回到顶部
   @Input() positionRight = true; // 是否右下角
 
 
@@ -39,16 +41,14 @@ export class NgLive2dComponent implements OnInit {
     this.init();
   }
 
-  // tslint:disable-next-line:use-lifecycle-interface
+  // tslint:disable-next-line: use-lifecycle-interface
   ngOnChanges() {
     this.style = {
       width: (150 / 1424) * document.body.clientWidth,
       height: ((150 / 1424) * document.body.clientWidth) / 0.8
     };
-     // tslint:disable-next-line:no-string-literal
-    if (window['loadlive2d']) {
-      // tslint:disable-next-line:no-string-literal
-      window['loadlive2d'](
+    if (window.loadlive2d) {
+      window.loadlive2d(
         'ng-live2d',
         this.setUrl()
       );
@@ -69,8 +69,7 @@ export class NgLive2dComponent implements OnInit {
       return console.log('mobile do not load model');
     }
 
-    // tslint:disable-next-line:no-string-literal
-    if (!window['loadlive2d']) {
+    if (!window.loadlive2d) {
       const script = document.createElement('script');
       script.innerHTML = live2dJSString;
       document.body.appendChild(script);
@@ -82,8 +81,7 @@ export class NgLive2dComponent implements OnInit {
     };
 
     setTimeout(() => {
-      // tslint:disable-next-line:no-string-literal
-      window['loadlive2d'](
+      window.loadlive2d(
         'ng-live2d',
         this.setUrl()
       );
@@ -97,7 +95,7 @@ export class NgLive2dComponent implements OnInit {
     if (this.modelNameOrUrl && this.modelNameOrUrl) {
       const keyIndex = this.modelNameArray.indexOf(this.modelNameOrUrl);
       if (keyIndex === -1) {
-       return this.modelNameOrUrl;
+        return this.modelNameOrUrl;
       } else {
         return this.model[this.modelNameOrUrl] ? this.model[this.modelNameOrUrl] : this.model.hijiki;
       }
@@ -111,9 +109,51 @@ export class NgLive2dComponent implements OnInit {
    */
   public scrollToTop(): void {
     const top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (top > 300 && this.needToTop) {
+    if (top > 300) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  }
+
+  /**
+   * 复制链接
+   */
+  public copyUrl() {
+    const clipBoardContent = window.location.href;
+    window.clipboardData.setData('Text', clipBoardContent);
+    alert('复制成功!');
+  }
+
+  /**
+   * 截图
+   */
+  public printScreen() {
+    // html2canvas(document.body).then((canvas: { toDataURL: (arg0: string) => any; }) => {
+    //   console.log(canvas, '生成的画布文件');
+    //   const canvasImg = canvas.toDataURL('image/png');
+    //   this.downloadFile(this.generateFileName(), canvasImg);
+    // });
+  }
+
+  /**
+   * 文件名
+   */
+  private generateFileName(): string {
+    return document.title + new Date();
+  }
+
+  /**
+   * 保存图片
+   * @param filename
+   * @param content
+   */
+  private downloadFile(filename: string, content: string): void {
+    const base64Img = content;
+    const oA = document.createElement('a');
+    oA.href = base64Img;
+    oA.download = filename;
+    const event = document.createEvent('MouseEvents');
+    event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+    oA.dispatchEvent(event);
   }
 
 }

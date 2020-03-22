@@ -20,7 +20,7 @@ impor { NgLive2dModule } from 'ng-live2d';
 })
 ```
 ``` html
-<lib-ng-live2d [modelNameOrUrl]="" [needToTop]="" [positionRight]=""></lib-ng-live2d>
+<lib-ng-live2d [modelNameOrUrl]="" [positionRight]=""></lib-ng-live2d>
 ```
 # Params
 ### modelNameOrUrl string
@@ -30,15 +30,16 @@ impor { NgLive2dModule } from 'ng-live2d';
 
 如果传入值没匹配到上面名字则视为传入的为模型url,则加载传入的地址模型
 
-### needToTop boolean
-是否需要点击回到顶部功能,可不传默认false
 
 ### positionRight boolean
 是否右下角显示,默认true,可不传;false则右下角显示
 
 # Change Log
 0.0.1 初始版本--2020.3.5
+
 0.0.2 增加支持传入模型地址,支持左下角显示--2020.3.6
+
+0.0.3 移除needToTop参数，增加扩展功能(分享链接，截图，回到顶部) 2020.3.22
 
 # Demo
 http://live2d.asnyc.cn
