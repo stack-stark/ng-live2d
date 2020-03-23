@@ -156,4 +156,7 @@ export class NgLive2dComponent implements OnInit {
     oA.dispatchEvent(event);
   }
 
+  public showTip() {
+    
+  }
 }
