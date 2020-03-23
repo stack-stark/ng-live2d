@@ -3,7 +3,7 @@ import { live2dJSString } from './live2d.js';
 declare global {
   interface Window { loadlive2d: any; clipboardData: any; }
 }
-// import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
 @Component({
   selector: 'lib-ng-live2d',
   templateUrl: './ng-live2d.component.html',
@@ -127,11 +127,11 @@ export class NgLive2dComponent implements OnInit {
    * 截图
    */
   public printScreen() {
-    // html2canvas(document.body).then((canvas: { toDataURL: (arg0: string) => any; }) => {
-    //   console.log(canvas, '生成的画布文件');
-    //   const canvasImg = canvas.toDataURL('image/png');
-    //   this.downloadFile(this.generateFileName(), canvasImg);
-    // });
+    html2canvas(document.body).then((canvas: { toDataURL: (arg0: string) => any; }) => {
+      console.log(canvas, '生成的画布文件');
+      const canvasImg = canvas.toDataURL('image/png');
+      this.downloadFile(this.generateFileName(), canvasImg);
+    });
   }
 
   /**
