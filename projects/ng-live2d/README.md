@@ -1,5 +1,5 @@
 # about
-angular下的live2d库,借鉴于https://github.com/QiShaoXuan/vuepress-plugin-cat.git
+angular下的live2d库
 
 # Install
 

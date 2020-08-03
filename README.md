@@ -1,27 +1,47 @@
-# NgLive2d
+# about
+angular下的live2d库
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+# Install
 
-## Development server
+``` bash
+npm install --save ng-live2d
+#or
+yarn add ng-live2d
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Usage
+``` js
+impor { NgLive2dModule } from 'ng-live2d';
 
-## Code scaffolding
+@NgModule({
+    "imports": [
+        NgLive2dModule
+    ]
+})
+```
+``` html
+<lib-ng-live2d [modelNameOrUrl]="" [needToTop]="" [positionRight]=""></lib-ng-live2d>
+```
+# Params
+### modelNameOrUrl string
+模型名或地址,包含以下名字,可不传,默认hijiki
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`z16`,`Epsilon2_1`,`izumi`,`koharu`,`shizuku`,`miku`,`hijiki`,`tororo`
 
-## Build
+如果传入值没匹配到上面名字则视为传入的为模型url,则加载传入的地址模型
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### needToTop boolean
+是否需要点击回到顶部功能,可不传默认false
 
-## Running unit tests
+### positionRight boolean
+是否右下角显示,默认true,可不传;false则右下角显示
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Change Log
+0.0.1 初始版本--2020.3.5
+0.0.2 增加支持传入模型地址,支持左下角显示--2020.3.6
 
-## Running end-to-end tests
+# Demo
+http://live2d.asnyc.cn
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# License
+MIT

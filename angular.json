@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/ng-live2d/tsconfig.lib.json",
             "project": "projects/ng-live2d/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-live2d/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
